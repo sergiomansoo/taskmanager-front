@@ -1,0 +1,16 @@
+nav {
+  display: flex;
+  gap: 16px;
+  background-color: black;
+  padding: 16px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav button {
+  background-color: red;
+  color: white;
+}

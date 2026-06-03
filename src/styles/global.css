@@ -1,0 +1,14 @@
+.card-tarefa{
+    display: center;
+    
+    align-content: center;
+    color:aliceblue;
+    flex-direction: column;
+    background-color: black;
+    padding: 50px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 200px;
+    height: 300px;
+    margin:50px
+}
