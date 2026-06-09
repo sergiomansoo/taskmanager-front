@@ -34,8 +34,8 @@ function UserListPage() {
       <h1>Usuários</h1>
       {usuarios.map((usuario)=>(
         <article key={usuario.id}>
+          <h2>Nome: {usuario.nome}</h2>
         <p>Id: {usuario.id}</p>
-        <p>Nome: {usuario.nome}</p>
         <p>Email: {usuario.email}</p>
         <p>Role: {usuario.role}</p>
         <p>Data de Criação: {usuario.data_criacao}</p>

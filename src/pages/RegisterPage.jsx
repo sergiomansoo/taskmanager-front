@@ -32,7 +32,7 @@ function RegisterPage() {
 
       <input
         value={nome}
-        type="text"
+        type="text" 
         placeholder="Nome"
         onChange={(event) => setNome(event.target.value)}
       />

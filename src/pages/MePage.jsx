@@ -8,7 +8,7 @@ function MePage(){
     useEffect(()=>{
         async function buscarUser() {
         try{
-             const token=localStorage.getItem('token')
+            const token=localStorage.getItem('token')
             const res= await api.get('/usuario/me',{
                 headers:{Authorization:`Bearer ${token}`}
             })
