@@ -54,7 +54,7 @@ function RegisterPage() {
       {erro && <p>{erro}</p>}
 
       <button type="submit">Registrar</button>
-      <Link to="/">Voltar para login</Link>
+      <Link to="/">Voltar para página inicial</Link>
     </form>
   )
 }

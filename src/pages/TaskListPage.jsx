@@ -41,6 +41,8 @@ function TaskListPage() {
           <p>Status: {tarefa.status}</p>
           <p>Prioridade: {tarefa.prioridade}</p>
           <p>Entrega: {tarefa.dataEntrega}</p>
+          <p>Usuario id: {tarefa.usuarioId};
+          </p>
         </article>
       ))}
     </main>

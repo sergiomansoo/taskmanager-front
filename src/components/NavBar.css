@@ -1,16 +1,36 @@
 nav {
   display: flex;
-  gap: 16px;
-  background-color: black;
-  padding: 16px;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 32px;
+  background-color: #111113;
+  border-bottom: 1px solid #2f2f35;
 }
 
 nav a {
-  color: white;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #e4e4e7;
   text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  background-color: #27272a;
+  color: #ffffff;
+}
+
+nav a.active {
+  background-color: #38bdf8;
+  color: #0f172a;
 }
 
 nav button {
-  background-color: red;
-  color: white;
+  margin-left: auto;
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+nav button:hover {
+  background-color: #f87171;
 }

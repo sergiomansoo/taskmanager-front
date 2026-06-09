@@ -6,7 +6,8 @@ import RegisterPage from './pages/RegisterPage'
 import TaskCreatePage from './pages/TaskCreatePage'
 import TaskListPage from './pages/TaskListPage'
 import UserListPage from './pages/UserListPage'
-
+import HomePage from './pages/HomePage'
+import MePage from './pages/MePage'
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     Boolean(localStorage.getItem('token')),
@@ -35,11 +36,11 @@ function App() {
             isAuthenticated ? (
               <Navigate to="/tarefas" />
             ) : (
-              <LoginPage onLoginSuccess={handleLoginSuccess} />
+              <HomePage/>
             )
           }
         />
-        <Route path="/registrar" element={<RegisterPage />} />
+        <Route path="/registrar" element={isAuthenticated?<Navigate to="/tarefas"/>:<RegisterPage />} />
         <Route
           path="/tarefas"
           element={isAuthenticated ? <TaskListPage /> : <Navigate to="/" />}
@@ -51,6 +52,14 @@ function App() {
         <Route
           path="/usuarios"
           element={isAuthenticated ? <UserListPage /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/usuarios/me"
+          element={isAuthenticated ? <MePage /> : <Navigate to="/" />}
+        />
+        <Route
+        path="/login"
+         element={isAuthenticated?<Navigate to="/tarefas"/>:<LoginPage onLoginSuccess={handleLoginSuccess}/>}
         />
       </Routes>
     </>
