@@ -7,8 +7,10 @@ function Navbar({ onLogout , usuario }) {
       <NavLink to="/tarefas">Tarefas</NavLink>
       <NavLink to="/criar-tarefa">Criar tarefa</NavLink>
       <NavLink to="/usuarios">Usuarios</NavLink>
-      
-      <NavLink to="/usuarios/me">Meu perfil</NavLink>
+      <NavLink  to="/criar-usuario">Criar usuario</NavLink>
+
+      <NavLink className={'profile'} to="/usuarios/me">Meu perfil</NavLink>
+
       <button type="button" onClick={onLogout}>
         Sair
       </button>

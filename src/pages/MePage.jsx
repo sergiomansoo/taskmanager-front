@@ -36,16 +36,15 @@ function MePage(){
         return<p>Carregando perfil...</p>
     }
     return(
-        <>
-        <div>
-            <h1>Meu Perfil</h1>
-            <h2>Olá, {usuario.nome}</h2>
+        <main>
+            <h1>Olá, {usuario.nome}</h1>
+        <article>
             <p>Id: {usuario.id}</p>
             <p>Email:{usuario.email}</p>
             <p>Role: {usuario.role}</p>
             <p>Data de Criação: {usuario.data_criacao}</p>
-        </div>
-        </>
+        </article>
+        </main>
 
     )
 }
