@@ -51,10 +51,20 @@ function TaskCreatePage() {
         onChange={(event)=>setTitulo(event.target.value)}></input>
         <input value={descricao} type='text' placeholder='Descrição' 
         onChange={(event)=>setDescricao(event.target.value)}></input>
-        <input value={status} type='text' placeholder='Status' 
-        onChange={(event)=>setStatus(event.target.value)}></input>
-        <input value={prioridade} type='text' placeholder='Prioridade' 
-        onChange={(event)=>setPrioridade(event.target.value)}></input>
+        <select value={status}
+        onChange={(event)=>setStatus(event.target.value)}>
+            <option value={''}>Selecione o Status</option>
+            <option value='PENDENTE'>PENDENTE</option>
+            <option value='EM_ANDAMENTO'>EM ANDAMENTO</option>
+            <option value='CONCLUIDA'>CONCLUIDA</option>
+        </select>
+        <select value={prioridade}
+        onChange={(event)=>setPrioridade(event.target.value)}>
+          <option value={''}>Selecione a Prioridade</option>
+          <option value='BAIXA'>BAIXA</option>
+          <option value='MEDIA'>MÉDIA</option>
+          <option value='ALTA'>ALTA</option>
+        </select>
         <input value={dataEntrega} type='date' placeholder='Data de Entrega'
          onChange={(event)=>setDataEntrega(event.target.value)}></input>
          <button type='submit'>Criar</button>

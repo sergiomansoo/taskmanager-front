@@ -9,17 +9,17 @@ function UserCreatePage() {
     const [role,setRole]=useState('')
     const[loading,setLoading]=useState(false)
     const[erro,setErro]=useState('')
-    const navigate=useNavigate
+    const navigate=useNavigate()
     async function handleSubmit(event){
         event.preventDefault()
         try{
             const token=localStorage.getItem('token')
             const res= await api.post('/usuario',{nome,email,senha,role},
-                {headers:{Authorization:`Bearer ${token}`},},)
+                {headers:{Authorization:`Bearer ${token}`},})
 
             navigate('/usuarios')
         }
-        catch{
+        catch(error){
             setErro("Nao foi possivel criar usuário.")
 
         }
@@ -43,8 +43,12 @@ function UserCreatePage() {
             onChange={(event)=>setEmail(event.target.value)}></input>
             <input value={senha} type='password' placeholder = 'Senha'
             onChange={(event)=>setSenha(event.target.value)}></input>
-            <input value={role} type='text' placeholder = 'Role (USER | ADMIN)'
-            onChange={(event)=>setRole(event.target.value)}></input>
+            <select value={role}
+            onChange={(event)=>setRole(event.target.value)}>
+                <option value={''}>Selecione a Role</option>
+                <option value='USER'>USER</option>
+                <option value='ADMIN'>ADMIN</option>
+            </select>
             <button type='submit'>Criar</button>
       </form>
       
