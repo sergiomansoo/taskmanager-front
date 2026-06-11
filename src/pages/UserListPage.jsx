@@ -4,6 +4,18 @@ function UserListPage() {
   const[usuarios,setUsuarios]=useState([])
   const[erro,setErro]=useState("")
   const[loading,setLoading]=useState(true)
+  async function handleDelete(id){
+    try{
+      const token=localStorage.getItem('token')
+      await api.delete(`/usuario/${id}`,{headers:{Authorization:`Bearer ${token}`}})
+      setUsuarios((usuarios)=>usuarios.filter((usuario)=>usuario.id!==id))
+    }
+    catch(error){
+      setErro("Nao foi possível deletar usuário")
+
+    }
+
+  }
   useEffect(()=>{
       async function buscarUsuarios(){
         try{
@@ -33,7 +45,18 @@ function UserListPage() {
     <main>
       <h1>Usuários</h1>
       {usuarios.map((usuario)=>(
+        
         <article key={usuario.id}>
+          <div className="card-tarefa-header">
+            <h2>{usuario.nome}</h2>
+            <button
+              className="lixeira"
+              type="button"
+              onClick={() => handleDelete(usuario.id)}
+            >
+              x
+            </button>
+          </div>
           <h2>Nome: {usuario.nome}</h2>
         <p>Id: {usuario.id}</p>
         <p>Email: {usuario.email}</p>
