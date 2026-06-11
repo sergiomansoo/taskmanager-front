@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react"
 import api from '../api/api'
+import UserCard from "../components/UserCard"
 function UserListPage() {
   const[usuarios,setUsuarios]=useState([])
   const[erro,setErro]=useState("")
@@ -33,36 +34,26 @@ function UserListPage() {
     buscarUsuarios()
   },[])
     if(loading){
-      return <div>Carregando...</div>
-    }
-    if(!loading &&usuarios.length===0){
-      return <div>Não há usuários</div>
+      return <main><h1>Usuários</h1>
+      <article>Carregando...</article></main>
     }
     if(erro){
       return <div>{erro}</div>
     }
+    if(!loading &&usuarios.length===0){
+      return <div>Não há usuários</div>
+    }
+    
   return (
     <main>
       <h1>Usuários</h1>
       {usuarios.map((usuario)=>(
         
-        <article key={usuario.id}>
-          <div className="card-tarefa-header">
-            <h2>{usuario.nome}</h2>
-            <button
-              className="lixeira"
-              type="button"
-              onClick={() => handleDelete(usuario.id)}
-            >
-              x
-            </button>
-          </div>
-          <h2>Nome: {usuario.nome}</h2>
-        <p>Id: {usuario.id}</p>
-        <p>Email: {usuario.email}</p>
-        <p>Role: {usuario.role}</p>
-        <p>Data de Criação: {usuario.data_criacao}</p>
-        </article>
+        <UserCard 
+        key={usuario.id}
+        usuario={usuario}
+        onDelete={handleDelete}
+       />
       ))} 
     </main>
   )

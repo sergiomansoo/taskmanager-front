@@ -32,8 +32,8 @@ function MePage(){
     if(erro){
         return <p>{erro}</p>
     }
-    if(!usuario){
-        return<p>Carregando perfil...</p>
+    if(loading){
+        return<main><article>Carregando perfil...</article></main>
     }
     return(
         <main>
