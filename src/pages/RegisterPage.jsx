@@ -29,6 +29,7 @@ function RegisterPage() {
   return (
     <form onSubmit={handleRegister}>
       <h1>Cadastro</h1>
+      <p className="form-notice">A primeira requisição pode demorar um pouco.</p>
 
       <input
         value={nome}

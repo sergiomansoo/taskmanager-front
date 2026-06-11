@@ -242,3 +242,13 @@ article,
   background-color: #34a350;
   color:white
 }
+.form-notice {
+  margin: -10px 0 4px;
+  padding: 10px 12px;
+  border: 1px solid #365314;
+  border-radius: 6px;
+  background-color: #1a2e1a;
+  color: #bbf7d0;
+  font-size: 14px;
+  line-height: 1.4;
+}

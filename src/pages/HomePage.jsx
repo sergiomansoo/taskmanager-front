@@ -9,9 +9,8 @@ function HomePage() {
       className="home-page"
     >
       <section className="home-content">
-        <p className="home-label">Organizacao simples para o seu dia</p>
+        <p className="home-label">Organização simples para o seu dia</p>
         <h1>TaskManager</h1>
-        <h3>O organizador de tarefas que combina com voce</h3>
 
         <div className="home-actions">
           <button type="button" onClick={() => navigate('/login')}>

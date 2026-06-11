@@ -9,9 +9,22 @@ function UserCreatePage() {
     const [role,setRole]=useState('')
     const[loading,setLoading]=useState(false)
     const[erro,setErro]=useState('')
+    const[erroSenha,setErroSenha]=useState('')
     const navigate=useNavigate()
+    function senhaValida(){
+         const tamMininmo=senha.length>=6
+        return tamMininmo
+        }
     async function handleSubmit(event){
         event.preventDefault()
+        setLoading(true)
+        if(!senhaValida()){
+            setErroSenha('Senha deve ter pelo menos 6 caracteres')
+            setLoading(false)
+            return
+        }
+        setErroSenha('')
+        
         try{
             const token=localStorage.getItem('token')
             const res= await api.post('/usuario',{nome,email,senha,role},
@@ -33,6 +46,7 @@ function UserCreatePage() {
     if(loading){
         return <h1>Carregando...</h1>
     }
+    
   return (
     <main>
         <form onSubmit={handleSubmit}>
@@ -43,6 +57,7 @@ function UserCreatePage() {
             onChange={(event)=>setEmail(event.target.value)}></input>
             <input value={senha} type='password' placeholder = 'Senha'
             onChange={(event)=>setSenha(event.target.value)}></input>
+            {erroSenha&&<p style={{color:'red',fontSize:'15px',margin:'0px',padding:'0px'}}>{erroSenha}</p>}
             <select value={role}
             onChange={(event)=>setRole(event.target.value)}>
                 <option value={''}>Selecione a Role</option>
