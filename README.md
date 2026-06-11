@@ -13,6 +13,22 @@ Front-end do **TaskManager**, uma aplicação web para gerenciamento de tarefas 
 - React Router DOM
 - Axios
 
+---
+
+## Acesso para Teste
+
+```
+ADMIN
+Email: admin@taskmanager.com
+Senha: admin123
+```
+
+```
+USER
+Email: user@taskmanager.com
+Senha: user123
+```
+---
 
 ## Funcionalidades
 
