@@ -66,6 +66,10 @@ Senha: user123
 A aplicação utiliza o perfil do usuário autenticado para controlar ações da interface.
 
 Usuários com role `ADMIN` têm acesso a funcionalidades administrativas, como busca de tarefas por ID de usuário e páginas de gerenciamento de usuários.
+![alt text](/src/assets/admin-image.png)
+
+Usuários com role `USER` têm acesso apenas a visualização e criação de suas próprias tarefas.
+![alt text](/src/assets/user-image.png)
 
 ---
 
