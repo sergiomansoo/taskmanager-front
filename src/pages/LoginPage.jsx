@@ -1,17 +1,17 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import api from '../api/api'
 
 function LoginPage({ onLoginSuccess }) {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [erro, setErro] = useState('')
-  const[loading,setLoading]=useState('')
+  const[loading,setLoading]=useState(false)
   const navigate = useNavigate()
 
   async function handleLogin(event) {
     event.preventDefault()
-
+    setLoading(true)
     try {
       const response = await api.post('/auth/login', {
         email,
@@ -19,19 +19,28 @@ function LoginPage({ onLoginSuccess }) {
       })
 
       localStorage.setItem('token', response.data.token)
-      setErro('')
       onLoginSuccess()
       navigate('/tarefas')
-    }    catch (error) {
+      
+    }   
+    catch (error) {
     console.log(error)
     console.log(error.response?.status)
     console.log(error.response?.data)
-    setErro('Nao foi possivel fazer login.')
+    setErro('Nao foi possivel fazer login.')  
 }
+finally{
+      setLoading(false)
+    }
+if(loading){
+  return<article>Carregando... A primeira Requisição pode demorar um pouco</article>
+}
+
   }
 
   return (
     <form onSubmit={handleLogin}>
+      
       <h1>Login</h1>
 
       <input
@@ -51,7 +60,10 @@ function LoginPage({ onLoginSuccess }) {
       {erro && <p>{erro}</p>}
 
       <button type="submit">Entrar</button>
+      <Link to="/">Voltar para página inicial</Link>
+      
     </form>
+    
   )
 }
 
