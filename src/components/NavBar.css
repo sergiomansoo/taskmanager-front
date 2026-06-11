@@ -21,26 +21,28 @@ nav a:hover {
 }
 
 nav a.active {
-  background-color: #38bdf8;
-  color: #0f172a;
+  background-color: #1cae40;
+  color: #000000;
 }
 
 nav button {
  
-  background-color: #ef4444;
-  color: #ffffff;
+ background-color: #202020;
+  color: #fff;
 }
+
 .profile{
  margin-left: auto;
   color: #ffffff;
-  background-color: #5d8ca8;
+  background-color: #1cae40;
 }
 .profile:hover{
-     background-color: #53b6bd;
+     background-color: #4eaf67;
 }
 .profile.active{
-  background-color: #53b6bd;
+  background-color: #44b360;
+  color:#ffffff
 }
 nav button:hover {
-  background-color: #f87171;
+   background-color: #b91c1c;
 }
