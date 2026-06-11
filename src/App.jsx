@@ -9,6 +9,7 @@ import UserListPage from './pages/UserListPage'
 import HomePage from './pages/HomePage'
 import MePage from './pages/MePage'
 import UserCreatePage from './pages/UserCreatePage'
+import TaskCreateUser from './pages/TaskCreateUserPage'
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     Boolean(localStorage.getItem('token')),
@@ -65,6 +66,10 @@ function App() {
         <Route
         path="/criar-usuario"
          element={isAuthenticated?<UserCreatePage />:<LoginPage onLoginSuccess={handleLoginSuccess}/>}
+        />
+        <Route
+        path="/criar-tarefa-id-usuario"
+         element={isAuthenticated?<TaskCreateUser />:<LoginPage onLoginSuccess={handleLoginSuccess}/>}
         />
         
       </Routes>
