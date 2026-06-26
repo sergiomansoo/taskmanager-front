@@ -3,7 +3,7 @@
 Front-end do **TaskManager**, uma aplicação web para gerenciamento de tarefas com autenticação de usuários, controle de permissões por perfil e integração com uma API REST.
 
 > **Backend:** [taskmanager-api](https://github.com/sergiomansoo/taskmanager) — desenvolvido em Java com Spring Boot.  
-> **Deploy:** [https://taskmanager-xlm1.onrender.com](https://taskmanager-xlm1.onrender.com)
+> **Deploy:** [taskmanager-vercel](https://taskmanager-front-seven.vercel.app/)
 
 
 ## Tecnologias Utilizadas
